@@ -1,0 +1,40 @@
+//Author: Declan Boyd, Project 3 - Addressable LED Light Strip project
+
+void setup() {
+  // put your setup code here, to run once:
+  byte Red = 0; //Initialize Red Value 
+  byte Green = 0; //Initialize Green Value 
+  byte Blue = 0; //Initialize Blue Value 
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+}
+//Startup Protocol (Start button)
+//LED Preset 1 Static
+//LED Preset 2 Pulse 
+//LED Preset 3 Snake
+//LED Preset 4 Every Other
+//LED Preset 5 Cascading
+//LED Preset 6 Rainbow
+//Custom Selection
+//Touchscreen button preset selector function
+//Touch Screen buttons
+
+
+//Color Selector Fuction
+byte Array[] ColorAdjuster () {
+  //Wait for user button press 
+  If (button == 1) {
+    Red =
+    Green = 
+    Blue = 
+  }
+}
+
+
+
+//Brightness Selector 
+//Wifi protocols
