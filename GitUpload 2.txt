@@ -1,0 +1,92 @@
+//Author: Declan Boyd, Project 3 - Addressable LED Light Strip project
+
+void setup() {
+  // put your setup code here, to run once:
+  byte Red = 0; //Initialize Red Value 
+  byte Green = 0; //Initialize Green Value 
+  byte Blue = 0; //Initialize Blue Value 
+  int Brightness = 0;
+  Array[3] Color = [Red,Blue,Green];
+  byte Array[3] TotalLEDs[256] = [0,0,0]; //Array where index is pointer from 0 to x - 1(Num of LEDs - 1) and color array is stored inside
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+}
+//Startup Protocol (Start button) -> button preset menu + custom preset button -> potentially a custom pattern w/ color function
+//LED Preset 1 Static: Static Selected, Cycle through colors
+void StaticSetting() {
+  byte Array[3] StaticColor = CustomColorAdjuster();
+  int Bright = BrightnessSelect();
+}
+
+//LED Preset 2 Pulse: Brightness of the previous LED (x - 1)
+void PulseSetting(){
+  byte Array[3] PulseColor = CustomColorAdjuster();
+  int Bright = BrightnessSelect();
+  //Introduce Sectioned Dimming To Make Pulses left and right
+} 
+
+//LED Preset 3 Snake: LEDs in sequence get longer as it meets an LED of same position that is an "apple" or different colored LED
+void SnakeSetting (){
+  byte Array[3] SnakeColor = CustomColorAdjuster();
+  byte Array[3] AppleColor = CustomColorAdjuster();
+  int Bright = BrightnessSelect();
+  //Introduce snake movement with LED positioning / same with apple
+}
+
+//LED Preset 4 Every Other: LED 0 is on then every even LED is on x + 2
+void EOSetting () {
+  int xLED = 0;
+  byte Array[3] EOColor = CustomColorAdjuster();
+  TotalLEDs[xLED] = EOColor;
+}
+
+//LED Preset 5 Checkered: Same as Every other but every odd light is a diff color
+void CheckeredSetting () {
+  int 
+}
+//LED Preset 6 Rainbow: Self Explanitory
+void RainbowSetting () {
+  //12 colors for the Rainbow with each LED representing a different color and this pattern will repeat
+}
+
+
+//Touchscreen button preset selector function
+//Touch Screen buttons/GUI
+
+
+//Custom Light Sequence Selection: X amount of buttons to represent a section of the LED Strip to create a repeatable pattern
+
+
+//Color Selector: 12 base colors of the rainbow, modifiable option later 
+//Color Selector Fuction
+byte Array[3] CustomColorAdjuster () {
+  //Screen Prompt: "What color would you like?" -> Display Arrow buttons with Color inbetween ->  Wait for user button press 
+  If (RRightButton.isPressed) { //Switch To Case Statements
+    Color[0]++;//Red byte is at index 0 in the array
+  else if (RLeftButton.isPressed) {
+    Color[0]--;
+  }  
+  If (GRightButton.isPressed) { //Switch To Case Statements
+    Color[1]++;//Green byte is at index 1 in the array
+  else if (GLeftButton.isPressed) {
+    Color[1]--;
+  If (BRightButton.isPressed) { //Switch To Case Statements
+    Color[2]++;//Blue byte is at index 2  in the array
+  else if (BLeftButton.isPressed) {
+    Color[2]--;
+  }
+  return Color;
+}
+
+//Brightness Selector 
+int BrightnessSelect () {
+  If (BrightRightButton.isPressed && Brightness < 10){
+    Brightness++;
+  }
+  else if (BrightLeftButton.isPressed && Brightness > 1){
+    Brightness--;
+  }
+}
+//Wifi protocols
